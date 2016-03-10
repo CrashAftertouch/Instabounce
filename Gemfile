@@ -29,6 +29,9 @@ gem "paperclip", "~> 4.3"
 # Use Simple Form for form creation
 gem 'simple_form'
 
+# Use Bootstrap for page styling
+gem 'bootstrap-sass', '~> 3.3.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
