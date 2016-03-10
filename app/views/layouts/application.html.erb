@@ -23,16 +23,18 @@
           <li><%= link_to "Login", "#" %></li>
           <li><%= link_to "Register", "#" %></li>
         </ul>
-      </div>
-    </div>
+      </div> <!-- navbar-header -->
+    </div> <!-- navbar-container -->
   </nav>
 
   <div class="container">
+    <!-- Flash message handler -->
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: [:alert, alert_for(name)] %>
     <% end %>
+
     <%= yield %>
-  </div>
+  </div> <!-- container -->
 
 </body>
 </html>

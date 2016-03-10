@@ -1,13 +1,17 @@
 class PostsController < ApplicationController
+  # Set current post for show, edit, update, and delete methods
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+  # Display all posts on the index page
   def index
     @posts = Post.all
   end
 
+  # Display current post
   def show
   end
 
+  # CRUD methods for posts
   def new
     @post = Post.new
   end
@@ -44,11 +48,15 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  #End CRUD methods
+
   private
+  # Whitelist image and caption parameters for posts
   def post_params
     params.require(:post).permit(:image, :caption)
   end
 
+  # Helper method to assign the current post to an ivar
   def set_post
     @post = Post.find(params[:id])
   end
