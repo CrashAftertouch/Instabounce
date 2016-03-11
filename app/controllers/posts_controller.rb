@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   # Set current post for show, edit, update, and delete methods
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # Display all posts on the index page
   def index
